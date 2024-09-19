@@ -1,20 +1,24 @@
-import Product from "./Product";
+import { Alert } from "./Alert";
+import { HiUser } from "react-icons/hi";
+import { BsBadge3D } from "react-icons/bs";
 
-export default function App() {
+export const App = () => {
   return (
-    <div>
-      <h1>Best selling</h1>
-
-      <Product
-        name="Tacos With Lime"
-        imgUrl="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?dpr=2&h=480&w=640"
-        price={10.99}
-      />
-      <Product
-        name="Fries and Burger"
-        imgUrl="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?dpr=2&h=480&w=640"
-        price={14.29}
-      />
-    </div>
+    <>
+      <Alert variant="info">
+        Would you like to browse our recommended products?
+        <p><BsBadge3D className="my-icon" size="24" /> {name}</p>
+      </Alert>
+      <Alert variant="error" outlined>
+        There was an error during your last transaction
+        <p><HiUser className="my-icon" size="24" /> {name}</p>
+      </Alert>
+      <Alert variant="success" elevated>
+        Payment received, thank you for your purchase<p><HiUser className="my-icon" size="24" /> {name}</p>
+      </Alert>
+      <Alert variant="warning" outlined elevated>
+        Please update your profile contact information<p><HiUser className="my-icon" size="24" /> {name}</p>
+      </Alert>
+    </>
   );
-}
+};
